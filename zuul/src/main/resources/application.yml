@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: zuul-service
+
+server:
+  port: 9000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  routes:
+    system:
+      path: /system/**
+      service-id: SYSTEM-REST
+    google:
+      path: /google/**
+      url: https://www.baidu.com
